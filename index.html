@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.html">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
     <script src="./app.js" defer></script>
     <title>Tela de Login</title>
 </head>
 <body>
+    <!-- Tela de Login -->
     <div class="container">
-        <img src="./logo.png" alt="Logo">
-        <div class="titulo">
-            <h1>ME.</h1>
-
-            <input type="NomeUsuario">
-            <input type="" id="NomeUsuario" placeholder="Digite sua senha nesse campo">
+        <div class="logo">
+            <img src="./logo.png" alt="Logo">
         </div>
-    </div>
-    
+        <div class="boxCenter"  >
+            <div class="login">
+                <h1>Login</h1>
+                <input id="loginUsuario" type="text" placeholder="Usuário/Email:">
+                <input id="senhaUsuario" type="password" placeholder="Password:">
+                <button id="Prosseguir">Prosseguir</button>
+                
+                <p class="register-text">Não tem uma conta? <a href="#" id="linkRegistro">Registre-se</a></p>
+                <!-- Link para recuperação de senha -->
+                <p class="forgot-password-text">Esqueceu sua senha? <a href="#" id="linkRecuperarSenha">Recuperar senha</a></p>
+            </div>
+        </div>
+        </div>
+        
+
 </body>
 </html>
