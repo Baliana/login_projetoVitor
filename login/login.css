@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background: linear-gradient(to bottom, #000000, #666666);
+    background: linear-gradient(to bottom, #000000, #393838);
     display: flex;
     flex-direction: column;
     justify-content: center;

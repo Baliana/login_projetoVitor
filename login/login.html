@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./login.css">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
-    <script src="./app.js" defer></script>
+    <script src="./login.js" defer></script>
     <title>Tela de Login</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
                 <h1>Login</h1>
                 <input id="loginUsuario" type="text" placeholder="Usuário/Email:">
                 <input id="senhaUsuario" type="password" placeholder="Password:">
-                <button id="Prosseguir">Prosseguir</button>
+                <button id="Prosseguir" onclick="login()">Prosseguir</button>
                 
                 <p class="register-text">Não tem uma conta? <a href="#" id="linkRegistro">Registre-se</a></p>
                 <!-- Link para recuperação de senha -->
