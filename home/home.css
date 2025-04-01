@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Irish Grover', sans-serif;
+    color: white;
+}
+
+
+#containerHome {
+    background: linear-gradient(to bottom, #000000, #393838);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+
+#like{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+#comentario{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+#buttonAdicionar{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}

@@ -35,7 +35,7 @@ const login = async () => {
 
     console.log(response);
 
-    if(response.status == 200){
+    if(response.status == 201){
         alert('Login bem-sucedido!')
 
     } else{
