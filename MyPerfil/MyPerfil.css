@@ -43,3 +43,157 @@ h1{
     font-size: 25px;
     color: white;
 }
+p{
+    position: absolute;
+    top: 50vh;
+    left: 40vh;
+    font-size: 25px;
+    color: white;
+}
+h2{
+    position: absolute;
+    top: 55vh;
+    left: 40vh;
+    font-size: 18px;
+    color: white;
+}
+.DadosUsuario {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.dado.h3 {
+    position: absolute;
+
+    left: 10vh;
+    font-size: 18px;
+    color: white;
+}
+
+.numero.h3 {
+    position: absolute;
+ 
+    left: 10vh;
+    font-size: 18px;
+    color: white;
+}
+
+.texto.h3 {
+    position: absolute;
+ 
+    left: 10vh;
+    font-size: 18px;
+    color: white;
+}
+.dado.h4 {
+    position: absolute;
+
+    left: 10vh;
+    font-size: 18px;
+    color: white;
+}
+
+.numero.h4 {
+    position: absolute;
+
+    left: 10vh;
+    font-size: 18px;
+    color: white;
+}
+
+.texto.h4 {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+}
+.dado.h5 {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+}
+
+.numero.h5 {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+}
+
+.texto.h5 {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+}
+.BoxCenter {
+    display: flex;
+    justify-content: center; 
+    gap: 10px;
+}
+.Boxseguir{
+    background-color: #FFD000;
+    width: 15vw;
+    height: 5vh;
+    margin-top: 10vh;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.buttonSeguir{
+    color: #000000;
+}
+.BoxMenssage{
+    background-color: #FFD000;
+    width: 15vw;
+    height: 5vh;
+    margin-top: 10vh;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonMessage{
+    color: #000000;
+}
+.cardPost {
+    background-color: white;
+    width: 15vw;
+    height: auto;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 65vh;
+    left: 50vh;
+}
+
+.cardPost img {
+    width: 90%;
+    height: 80%;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-bottom: 10px;
+}
+
+.iconesCard {
+    display: flex;
+    margin-right: 50%;
+    gap: 15px;
+
+}
+
+.iconesCard img {
+    width: 20px;
+    height: 20px;
+   
+}
+.iconesConfig{
+    width: 5px;
+    height: 5px;
+    margin-left: 550px;
+    gap: 15px;
+}
