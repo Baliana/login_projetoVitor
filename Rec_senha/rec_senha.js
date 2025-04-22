@@ -23,14 +23,14 @@ const Rec_senha = async () => {
             },
             body: JSON.stringify({
                 email: loginUsuario,
-                keyword: keywordUsuario
+                wordKey: keywordUsuario
             })
         }
 
         const response = await fetch(url, options)
         console.log(response)
 
-        if (response.status == 201) {
+        if (response.status == 200) {
             alert('Senha recuperada com sucesso!')
         } else {
             alert('Credenciais Inválidas!')

@@ -18,7 +18,6 @@ const registro = async () => {
     
     if (email !== '' && nome !== '' && senhaUsuario !== '' && confirmPassword !== '' && keyword !== '') {
         
-        // Verificação para garantir que as senhas coincidem
         if (senhaUsuario !== confirmPassword) {
             alert('As senhas não coincidem.')
             return
@@ -46,7 +45,7 @@ const registro = async () => {
             const response = await fetch(url, options)
 
             
-            if (response.status == 201) {
+            if (response.status == 200) {
                 alert('Registro bem-sucedido')
             } else {
                 alert('Erro no registro')
