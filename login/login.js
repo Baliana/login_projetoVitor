@@ -3,6 +3,7 @@
 const loginContainer = document.querySelector('.container')
 const bottonProsseguir = document.getElementById('Prosseguir')
 
+
 // Função para exibir a tela de login
 function mostrarTelaLogin() {
     loginContainer.style.display = 'flex'
@@ -33,7 +34,7 @@ const login = async () => {
 
     const response = await fetch(url, options)
 
-    console.log(response);
+    console.log(response)
 
     if(response.status == 201){
         alert('Login bem-sucedido!')
