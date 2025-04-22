@@ -33,14 +33,19 @@ const login = async () => {
 
     const response = await fetch(url, options)
 
+    const data = await response.json()
+
     console.log(response);
 
-    if(response.status == 201){
+    if(response.status == 200){
         alert('Login bem-sucedido!')
-
+        localStorage.setItem('idUser', JSON.stringify(data.user.id))
+        window.location.replace('../home/home.html')
     } else{
         alert('Credenciais Inválidas!')
     }
+
+
     
 } else {
     alert('Usuário ou senha incorretos.')
