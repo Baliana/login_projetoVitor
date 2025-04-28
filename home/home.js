@@ -188,7 +188,6 @@ async function criaPostagem(postagens) {
     });
 
     
-
 }
 
 async function comentarPost(idPublicacao, textoComentario) {
