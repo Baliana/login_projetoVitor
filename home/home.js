@@ -289,4 +289,5 @@ async function adicionarPostagem(){
 }
 
 
+
 puxarPostagens()
