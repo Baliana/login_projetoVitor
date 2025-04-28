@@ -173,3 +173,60 @@ body::-webkit-scrollbar {
     justify-content:center;
    
 }
+
+.divComentar {
+    background-color: #FFD000;
+    font-size: 15px;
+    width: 370px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 60px;
+    border-radius: 10px;
+}
+
+.inputComentario{
+    margin: 10px;
+    width: 70%;
+    font-size: 15px;
+    color: black;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: vertical;
+}
+
+.inputComentario::placeholder{
+    color: black;
+}
+
+.botaoComentar{
+    font-size: 14px;
+    width: 80px;
+    height: 25px;
+    color: white;
+    background-color:black;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.comentarioExibido{
+    display:flex;
+    align-items: center;
+    margin-top: 10px;
+    color: black;
+    margin-left: 10px;
+}
+
+.imgPerfil{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.textoComentario{
+    font-size: 14px;
+    color: black;
+}
