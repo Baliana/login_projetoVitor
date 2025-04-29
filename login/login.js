@@ -33,25 +33,15 @@ const login = async () => {
     }
 
     const response = await fetch(url, options)
+
     const data = await response.json()
 
-<<<<<<< HEAD
-    const data = await response.json()
 
     console.log(response);
 
     if(response.status == 200){
-        alert('Login bem-sucedido!')
         localStorage.setItem('idUser', JSON.stringify(data.user.id))
         window.location.replace('../home/home.html')
-=======
-    console.log(data)
-
-    if(response.status == 200){
-        alert('Login bem-sucedido!')
-        localStorage.setItem('idUsuario', JSON.stringify(data.user.id))
-
->>>>>>> ebe131c73566f9c569801d3bbdf4d6b455e35f0c
     } else{
         alert('Credenciais Inválidas!')
     }
@@ -63,3 +53,4 @@ const login = async () => {
 }
 
 }
+

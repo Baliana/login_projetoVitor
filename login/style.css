@@ -64,7 +64,7 @@ h1 {
     margin-top: 5px;
 }
 
-.login button {
+#logar {
     width: 150px;
     padding: 10px;
     background-color: #a8a2a2;
@@ -73,6 +73,7 @@ h1 {
     border-radius: 15px;
     cursor: pointer;
     margin-top: 5px;
+    font-family: 'Irish Grover', sans-serif;
 }
 
 .login button:hover {

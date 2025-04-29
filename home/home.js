@@ -18,8 +18,10 @@ async function puxarPostagens() {
 
 }
 
+
 async function criaPostagem(postagens) {
 
+    
     // const containerHome = document.getElementById('containerHome')
     
     // const perfilUser = document.createElement('div')
@@ -39,51 +41,51 @@ async function criaPostagem(postagens) {
     // perfilUser.appendChild(perfilUserImg)
     // containerHome.appendChild(perfilUser)
 
-    const publicacao = document.getElementById('publicacao')
 
+    const publicacao = document.getElementById('publicacao')
 
     postagens.forEach(async function(postagens) {
         const urlUser = `https://back-spider.vercel.app/user/pesquisarUser/${postagens.idUsuario}`;
         const responseUser = await fetch(urlUser);
         const dataUser = await responseUser.json();
-    
 
         const containerPublicacao = document.createElement('div');
         containerPublicacao.className = "containerPublicacao";
-    
+
         const userPost = document.createElement('div');
         userPost.className = "userPost";
-    
+
         const imgUser = document.createElement('img');
         imgUser.className = "imgUser";
-    
+
         const nomeUser = document.createElement('p');
         nomeUser.className = "nomeUser";
-    
+
         const fotoPost = document.createElement('div');
         fotoPost.className = "fotoPost";
-    
+
         const fotoPostImg = document.createElement('img');
         fotoPostImg.className = "fotoPostImg";
-    
+
         const descricaoPost = document.createElement('div');
         descricaoPost.className = "descricaoPost";
-    
+
         const descricaoP = document.createElement('p');
         descricaoP.className = "user";
-    
+
         const descricaoA = document.createElement('a');
         descricaoA.className = "comentarioUser";
-    
+
         const like = document.createElement('div');
         like.className = "like";
-    
+
         const likeImg = document.createElement('img');
         likeImg.className = "likeImg";
         likeImg.src = 'Favorite.png';
-    
+
         likeImg.addEventListener('click', async function() {
             const response = await curtirPost(postagens.id);
+
             if (response && response.status === 200) {
                 likeImg.src = 'Love.png';
             }
@@ -91,83 +93,77 @@ async function criaPostagem(postagens) {
 
         const comentario = document.createElement('div');
         comentario.className = "comentario";
-    
+
         const comentarioImg = document.createElement('img');
         comentarioImg.className = "comentarioImg";
         comentarioImg.src = 'Chat Bubble.png';
 
         const divComentar = document.createElement('div');
         divComentar.className = 'divComentar';
-        divComentar.style.display = 'none';
-    
+        divComentar.style.display = 'none'; 
+
         const inputComentario = document.createElement('input');
         inputComentario.type = 'text';
         inputComentario.placeholder = 'Adicione um comentário...';
-        inputComentario.className = 'inputComentario'
-    
+        inputComentario.className = 'inputComentario';
+
         const botaoComentar = document.createElement('button');
         botaoComentar.textContent = 'Comentar';
-        botaoComentar.className = 'botaoComentar'
-    
+        botaoComentar.className = 'botaoComentar';
+
         botaoComentar.addEventListener('click', async () => {
             await comentarPost(postagens.id, inputComentario.value);
             divComentar.style.display = 'none';
             inputComentario.value = ''; 
         });
-    
+
         divComentar.appendChild(inputComentario);
         divComentar.appendChild(botaoComentar);
-    
-        comentarioImg.addEventListener('click', async () => {
 
+        comentarioImg.addEventListener('click', async () => {
+        
             if (divComentar.style.display === 'block') {
                 divComentar.style.display = 'none';
                 return;
             }        
 
-            divComentar.style.display = 'block';
-        
+            divComentar.style.display = 'block'; 
+
             const comentariosExistentes = divComentar.querySelectorAll('.comentarioExibido');
             comentariosExistentes.forEach(el => el.remove());
-        
-            if (postagens.comentarios && postagens.comentarios.length > 0) {
-                
-                for (const comentario of postagens.comentarios) {
 
+            if (postagens.comentarios && postagens.comentarios.length > 0) {
+                for (const comentario of postagens.comentarios) {
                     const urlUsuarioComentario = `https://back-spider.vercel.app/user/pesquisarUser/${comentario.idUsuario}`;
                     const response = await fetch(urlUsuarioComentario);
                     const user = await response.json();
-        
-                    // Criar container para o comentário
+
                     const comentarioExibido = document.createElement('div');
                     comentarioExibido.className = 'comentarioExibido';
-        
-      
+
                     const imgPerfil = document.createElement('img');
                     imgPerfil.src = user.imagemPerfil;
-                    imgPerfil.className = 'imgPerfil'
-        
+                    imgPerfil.className = 'imgPerfil';
+
                     const textoComentario = document.createElement('span');
                     textoComentario.innerHTML = `<strong>${user.nome}</strong>: ${comentario.descricao}`;
-                    textoComentario.className = 'textoComentario'
+                    textoComentario.className = 'textoComentario';
 
                     comentarioExibido.appendChild(imgPerfil);
                     comentarioExibido.appendChild(textoComentario);
-        
-                    // Adiciona na div de comentários da publicação
+
                     divComentar.appendChild(comentarioExibido);
                 }
             }
         });
-        
-    
+
         // Adicionando contaeúdo na tag
         imgUser.src = dataUser.imagemPerfil;
         nomeUser.textContent = dataUser.nome;
         fotoPostImg.src = postagens.imagem;
         descricaoP.textContent = dataUser.nome + " ";
         descricaoA.textContent = postagens.descricao;
-    
+
         // Adicionando tag no pai
         descricaoP.appendChild(descricaoA);
         userPost.appendChild(imgUser);
@@ -176,22 +172,22 @@ async function criaPostagem(postagens) {
         descricaoPost.appendChild(descricaoP);
         like.appendChild(likeImg);
         comentario.appendChild(comentarioImg);
-    
+
+        // Adiciona a div de comentar no final da publicação
         containerPublicacao.appendChild(userPost);
         containerPublicacao.appendChild(fotoPost);
         containerPublicacao.appendChild(descricaoPost);
         containerPublicacao.appendChild(like);
         containerPublicacao.appendChild(comentario);
-        containerPublicacao.appendChild(divComentar); // adiciona a div de comentário aqui
-    
+        containerPublicacao.appendChild(divComentar); // Adicionando div de comentário dentro da publicação
+
         publicacao.appendChild(containerPublicacao);
     });
-
-    
 }
 
+
 async function comentarPost(idPublicacao, textoComentario) {
-    const idUsuario = JSON.parse(localStorage.getItem('idUser'));
+    const idUsuario = localStorage.getItem('idUser');
 
     const url = `https://back-spider.vercel.app/publicacoes/commentPublicacao/${idPublicacao}`;
 
@@ -208,6 +204,7 @@ async function comentarPost(idPublicacao, textoComentario) {
 
     const response = await fetch(url, options);
     const data = await response.json();
+    
 
     if (response.status === 200) {
         alert('Comentário publicado!');
@@ -220,12 +217,9 @@ async function comentarPost(idPublicacao, textoComentario) {
 
 async function curtirPost(idPublicacao){
 
-    const comentarioImg = document.getElementById('comentarioImg') 
-
     const url = `https://back-spider.vercel.app/publicacoes/likePublicacao/${idPublicacao}`
 
-    const idUsuario = localStorage.getItem(JSON.parse('idUser'))
-
+    const idUsuario = localStorage.getItem('idUser')
 
     const options = {
         method: "PUT",
@@ -241,7 +235,6 @@ async function curtirPost(idPublicacao){
 
     if(response.status == 200){
         return response
-        console.log(response)
     }
 
     return false
@@ -249,6 +242,7 @@ async function curtirPost(idPublicacao){
     
 
 }
+
 
 async function adicionarPostagem(){
 
